@@ -1,0 +1,33 @@
+BUSINESS CASE
+============
+Company: OmniRetail Analytics (synthetic)
+Period: Jan-2024 to Aug-2026
+Scope: Customer, sales, product, marketing and service analytics
+
+Executive questions
+-------------------
+1. Which regions and categories drive revenue?
+2. Which categories drive profit rather than just sales?
+3. What percentage of customers are repeat customers?
+4. Which customers are at risk based on revenue decline?
+5. Which discount levels damage margin?
+6. Which campaign channels create efficient conversions?
+7. Which support issues create the biggest service burden?
+8. What operational patterns should management act on?
+
+Expected analytical outputs
+---------------------------
+Revenue trend, YoY growth, AOV, customer retention, RFM segmentation,
+product profitability, discount/margin analysis, return rate, delivery performance,
+support resolution/CSAT, campaign funnel and cost per conversion.
+
+Definition of success
+---------------------
+A recruiter should be able to see:
+- strong SQL
+- practical Python/Pandas
+- Power BI + DAX
+- ETL/data quality
+- data modeling
+- business analysis
+- ability to communicate recommendations

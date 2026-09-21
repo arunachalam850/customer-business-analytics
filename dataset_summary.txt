@@ -1,0 +1,7 @@
+customers: 25,000
+products: 1,500
+orders: 120,000
+order_items: 224,275
+returns: 12,615
+support_tickets: 35,000
+campaign_touchpoints: 30,000

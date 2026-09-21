@@ -1,0 +1,19 @@
+KPI CATALOG
+===========
+
+Revenue = Sum of order_total for Completed and Returned orders
+Orders = Distinct order_id for Completed and Returned
+AOV = Revenue / Orders
+Gross Profit = Net line sales - product cost
+Gross Margin % = Gross Profit / Revenue
+Return Rate % = Returned orders / Orders
+Repeat Customer % = Customers with >1 valid order / valid customers
+YoY Growth % = (Current period revenue - prior year revenue) / prior year revenue
+Avg Delivery Days = Average delivery_days for valid orders
+Avg Resolution Hours = Average support resolution_hours
+Avg CSAT = Average support CSAT
+CTR % = Clicks / Delivered
+Conversion Rate % = Conversions / Clicks
+Cost per Conversion = Spend / Conversions
+
+Document every KPI in Power BI with a clear definition and filters.
