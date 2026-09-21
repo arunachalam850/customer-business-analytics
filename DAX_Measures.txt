@@ -1,0 +1,88 @@
+-- Base measures
+Revenue =
+CALCULATE(
+    SUM(orders[order_total]),
+    orders[order_status] IN {"Completed","Returned"}
+)
+
+Orders =
+CALCULATE(
+    DISTINCTCOUNT(orders[order_id]),
+    orders[order_status] IN {"Completed","Returned"}
+)
+
+Customers =
+CALCULATE(
+    DISTINCTCOUNT(orders[customer_id]),
+    orders[order_status] IN {"Completed","Returned"}
+)
+
+AOV =
+DIVIDE([Revenue], [Orders])
+
+Gross Profit =
+SUMX(
+    order_items,
+    order_items[net_line_sales] -
+    order_items[quantity] * RELATED(products[unit_cost])
+)
+
+Gross Margin % =
+DIVIDE([Gross Profit], [Revenue])
+
+Returned Orders =
+DISTINCTCOUNT(returns[order_id])
+
+Return Rate % =
+DIVIDE([Returned Orders], [Orders])
+
+YoY Revenue =
+CALCULATE(
+    [Revenue],
+    DATEADD('Date'[Date], -1, YEAR)
+)
+
+YoY Growth % =
+DIVIDE([Revenue] - [YoY Revenue], [YoY Revenue])
+
+New Customers =
+VAR FirstOrder =
+    ADDCOLUMNS(
+        VALUES(customers[customer_id]),
+        "FirstOrderDate",
+        CALCULATE(MIN(orders[order_datetime]))
+    )
+RETURN
+COUNTROWS(
+    FILTER(
+        FirstOrder,
+        [FirstOrderDate] IN VALUES('Date'[Date])
+    )
+)
+
+Repeat Customer % =
+VAR CustomerOrders =
+    ADDCOLUMNS(
+        VALUES(customers[customer_id]),
+        "OrderCount", CALCULATE([Orders])
+    )
+RETURN
+DIVIDE(
+    COUNTROWS(FILTER(CustomerOrders, [OrderCount] > 1)),
+    COUNTROWS(CustomerOrders)
+)
+
+Avg Resolution Hours =
+AVERAGE(support_tickets[resolution_hours])
+
+Avg CSAT =
+AVERAGE(support_tickets[csat])
+
+Campaign Spend =
+SUM(campaign_touchpoints[spend])
+
+Campaign Conversions =
+SUM(campaign_touchpoints[converted])
+
+Cost per Conversion =
+DIVIDE([Campaign Spend], [Campaign Conversions])

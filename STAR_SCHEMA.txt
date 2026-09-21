@@ -1,0 +1,91 @@
+DIMENSIONS
+-----------
+DimCustomer
+  customer_id (PK)
+  customer_name
+  city
+  region
+  segment
+  acquisition_channel
+  signup_date
+
+DimProduct
+  product_id (PK)
+  product_name
+  category
+  unit_cost
+  list_price
+  product_tier
+
+DimDate
+  date (PK)
+  year
+  quarter
+  month
+  month_name
+  week
+
+FACTS
+-----
+FactOrders
+  order_id (PK)
+  customer_id (FK)
+  order_datetime
+  order_status
+  sales_channel
+  payment_method
+  item_count
+  gross_sales
+  net_sales
+  shipping_fee
+  order_total
+  delivery_days
+
+FactOrderItems
+  order_item_id (PK)
+  order_id (FK)
+  product_id (FK)
+  quantity
+  unit_price
+  discount_pct
+  discount_amount
+  net_line_sales
+
+FactPayments
+  payment_id
+  order_id
+  payment_datetime
+  payment_method
+  amount
+  payment_status
+
+FactReturns
+  return_id
+  order_id
+  product_id
+  return_reason
+  refund_amount
+  return_date
+
+FactSupport
+  ticket_id
+  customer_id
+  opened_datetime
+  issue_type
+  priority
+  resolution_hours
+  resolved_datetime
+  csat
+  channel
+
+FactCampaignTouch
+  campaign_touch_id
+  customer_id
+  touch_date
+  campaign_name
+  touch_channel
+  delivered
+  opened
+  clicked
+  converted
+  spend

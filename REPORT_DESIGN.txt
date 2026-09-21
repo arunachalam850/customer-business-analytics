@@ -1,0 +1,36 @@
+POWER BI REPORT DESIGN
+======================
+
+Page 1: Executive Overview
+--------------------------
+KPI cards: Revenue | Gross Profit | Margin % | Orders | AOV | Customers | Return Rate
+Visuals: Monthly Revenue & YoY, Revenue by Region, Revenue by Category, Sales Channel Mix
+Slicers: Date, Region, Segment, Category, Channel
+
+Page 2: Customer Analytics
+--------------------------
+KPI: Customers | Repeat Customer % | Avg Customer Revenue
+Visuals: New vs Returning, Customer Segment Mix, RFM matrix, Top Customers, Revenue by Segment
+Drill-through: Customer Detail
+
+Page 3: Product & Profitability
+-------------------------------
+KPI: Revenue | Gross Profit | Margin %
+Visuals: Category Revenue vs Margin, Top/Bottom Products, Discount Band vs Margin, Pareto 80/20
+Drill-through: Product Detail
+
+Page 4: Operations & Service
+----------------------------
+KPI: Return Rate | Avg Delivery Days | Avg Resolution Hours | Avg CSAT
+Visuals: Returns by Reason, Delivery Trend, Support Issue Mix, Resolution Time by Priority
+
+Page 5: Marketing Performance
+----------------------------
+KPI: Spend | Conversions | Cost per Conversion | CTR
+Visuals: Campaign Funnel, Campaign ROI/Cost per Conversion, Channel Comparison, Conversion Trend
+
+Business insight callouts:
+- Highlight high-revenue / low-margin categories.
+- Highlight customers at risk of revenue decline.
+- Highlight campaigns with high spend and weak conversion.
+- Highlight service issues with high volume + poor CSAT.
